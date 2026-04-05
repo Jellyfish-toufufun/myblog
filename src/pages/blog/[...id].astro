@@ -1,0 +1,26 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, getEntry, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(post => ({
+    params: { id: post.id }
+  }));
+}
+
+const { id } = Astro.params;
+const post = await getEntry('blog', id);
+const { Content } = await render(post);
+---
+
+<Layout title={post.data.title}>
+  <article>
+    <h1>{post.data.title}</h1>
+    <p>发布时间：{post.data.pubDate.toLocaleDateString()}</p>
+    {post.data.description && <p>{post.data.description}</p>}
+    <Content />
+    <hr />
+    <a href="/blog">← 返回博客列表</a>
+  </article>
+</Layout>
