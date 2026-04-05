@@ -6,6 +6,9 @@ const posts = await getCollection('blog');
 ---
 
 <Layout title="博客列表">
+  <a href="/">首页</a>
+  <a href="/about/">关于</a>
+  <a href="/blog/">博客</a>
   <h1>我的博客</h1>
   <ul>
     {posts.map((post) => (
