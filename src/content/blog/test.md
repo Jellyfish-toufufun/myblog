@@ -1,8 +1,8 @@
 ---
 title: 我的第一篇博客
 description: 这是一篇测试文章
-pubDate: 2026-04-06
-updatedDate: 2026-04-06
+pubDate: 2026-03-28
+updatedDate: 2026-03-28
 tags:
   - Astro
   - Obsidian
