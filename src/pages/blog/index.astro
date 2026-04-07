@@ -4,11 +4,11 @@ import { getCollection } from 'astro:content';
 
 const posts = await getCollection('blog');
 import '../../styles/global.css';
-import Navigation from '../../components/Navigation.astro';
+import Header from '../../components/Header.astro';
 ---
 
 <Layout title="博客列表">
-  <Navigation />
+  <Header />
   <h1>我的博客</h1>
   <ul>
     {posts.map((post) => (
