@@ -22,10 +22,18 @@ h1 {
 
 /* 导航样式 */
 
+/* 桌面端水平排列 */
 .nav-links {
-  width: 100%;
-  display: none;
-  margin: 0;
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* 手机端垂直排列，且不隐藏 */
+@media (max-width: 640px) {
+  .nav-links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }
 
 .nav-links a {
